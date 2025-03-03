@@ -11,11 +11,18 @@ public class EmpresaController {
 }
     
     public void InsertarEmpresa(Empresa nuevaEmpresa){
-        boolean respuesta =  EmpresaService.InsertarEmpresa(nuevaEmpresa);
-        if(respuesta){
-            System.out.println("Registro guardado con exito");
-        }else{
-            System.out.println("Resgistro no guardado, estas presentando problemas");
-        }
+        EmpresaService.CrearEmpresa(nuevaEmpresa);
+    }
+    
+    public void MostrarDatos(){
+        EmpresaService.ImprimirDatos();
+    }
+    
+    public void EliminarRegistro(String nit){
+        EmpresaService.EliminarEmpresa(nit);
+    }
+    
+    public void ModificarEmpresa(String id, int opcion, String dato){
+        EmpresaService.ModificarEmpresa(id, opcion, dato);
     }
 }

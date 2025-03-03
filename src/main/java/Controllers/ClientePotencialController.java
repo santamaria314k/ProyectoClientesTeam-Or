@@ -5,20 +5,25 @@ import Services.ClientePotencialService;
 
 public class ClientePotencialController {
     
-     public ClientePotencialService ClientePotencialService;
-    
-    
-    public ClientePotencialController(){
-        this.ClientePotencialService = new ClientePotencialService();
-    
-}
+    public ClientePotencialService ClienPoteService;
 
-public void InsertarClientePotencial(ClientePotencial nuevoClientePotencial){
-        boolean respuesta =  ClientePotencialService.InsertarClientePotencial(nuevoClientePotencial);
-        if(respuesta){
-            System.out.println("Registro guardado con exito");
-        }else{
-            System.out.println("Resgistro no guardado, estas presentando problemas");
-        }
+    public ClientePotencialController() {
+        this.ClienPoteService = new ClientePotencialService();
+    }
+    
+    public void CrearClientePotencial(ClientePotencial nuevoClientePotencial){
+        ClienPoteService.CrearClientePotencial(nuevoClientePotencial);
+    }
+    
+    public void ImprimirDatosClientePotencial(){
+        ClienPoteService.ImprimirDatosClientePotencial();
+    }
+    
+    public void EliminarDatosClientePotencial(int id){
+        ClienPoteService.EliminarDatosClientePotencial(id);
+    }
+    
+    public void ModificarDatosPotencial(int id, int opcion, String dato){
+        ClienPoteService.ModificarDatosPotencial(id, opcion, dato);
     }
 }

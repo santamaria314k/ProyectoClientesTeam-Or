@@ -2,23 +2,23 @@ package Models;
 
 
 public class Empresa {
-    private int nit;
+    private String nit;
     private String razonSocial;
     private String telefono;
     private String actividad;
 
-    public Empresa(int nit, String razonSocial, String telefono, String actividad) {
+    public Empresa(String nit, String razonSocial, String telefono, String actividad) {
         this.nit = nit;
         this.razonSocial = razonSocial;
         this.telefono = telefono;
         this.actividad = actividad;
     }
 
-    public int getNit() {
+    public String getNit() {
         return nit;
     }
 
-    public void setNit(int nit) {
+    public void setNit(String nit) {
         this.nit = nit;
     }
 

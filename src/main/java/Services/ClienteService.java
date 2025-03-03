@@ -39,6 +39,7 @@ public class ClienteService {
     
     public void ModificarCliente(int id, int seleccion, String info ,int edad){
         for(int i = 0; i< this.db.getCliente().size(); i++){
+            if(this.db.getCliente().get(i).getId() == id){
             switch (seleccion) {
                 case 1 -> this.db.getCliente().get(i).setNombres(info);
                 case 2 -> this.db.getCliente().get(i).setApellidos(info);
@@ -53,4 +54,5 @@ public class ClienteService {
         }
     }
     
+}
 }

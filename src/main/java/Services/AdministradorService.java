@@ -38,6 +38,7 @@ public class AdministradorService {
     
     public void ModificarAdministrador(int id, int opcion, String dato){
         for(int i = 0; i< this.dbAdmin.getAdministrador().size(); i++){
+            if(this.dbAdmin.getAdministrador().get(i).getIdAdministrador() == id){
             switch (opcion) {
                 case 1 -> this.dbAdmin.getAdministrador().get(i).setNombre(dato);
                 case 2 -> this.dbAdmin.getAdministrador().get(i).setApellido(dato);
@@ -52,4 +53,5 @@ public class AdministradorService {
         }
     }
     
+}
 }
