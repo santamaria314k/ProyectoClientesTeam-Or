@@ -1,66 +1,24 @@
-
 package Services;
-import DB.DataBase;
+import DB.DataBaseEmpresa;
 import Models.Empresa;
-
-
 
 public class EmpresaService {
     
+    public DataBaseEmpresa db;
     
-    
-     public DataBase db ;
-    
-    public  EmpresaService(){
-    this.db =new DataBase();
+    public EmpresaService(){
+        this.db = new DataBaseEmpresa();
     }
     
     public boolean InsertarEmpresa(Empresa nuevaEmpresa){
-    boolean respuesta =false;
-    for(int i = 0 ; i< this.db.lstEmpresas.length; i++){
-        if(this.db.lstEmpresas[i]==null){
-        this.db.lstEmpresas[i]=nuevaEmpresa;
-        respuesta=true;
-        break;
-        }
-    
-    }
-    
-    return respuesta;
-    }
-
-    public void Imprimir(){
-      
-        System.out.println("///////////////////////////////////////////");
-        
-        
-        for(int i=1; i < this.db.lstEmpresas.length ; i++){
-        if(this.db.lstEmpresas[i] != null){
-            
-            
-            
-            System.out.println("NIT Empresa :"+this.db.lstEmpresas[i].nit);
-            System.out.println("Razon Social Empresa :"+ this.db.lstEmpresas[i].getRazonSocial());
-            System.out.println("Telefono  Empresa :"+ this.db.lstEmpresas[i].getTelefono());
-            System.out.println("Actividad Empresa :"+ this.db.lstEmpresas[i].getActividad());
-        
-        }
+        if (nuevaEmpresa == null){
+            System.out.println("Campos vacios! no se pudo agregar la empresa :( ");
+            return false; // No se puede agregar una empresa nula
         }
         
-        System.out.println("-----//-----------------//-----------//-------");
-    
-    }
-       
-    
-    
-    
-    
-    
-    
-  
-    
-    
-    
-    
-    
+        db.getEmpresa().add(nuevaEmpresa); // Agrega a la empresa a la lista
+        System.out.println("La empresa se agrego correctamente :)");
+        return true; // Indica que la inserción fue exitosa
+        
+    }  
 }

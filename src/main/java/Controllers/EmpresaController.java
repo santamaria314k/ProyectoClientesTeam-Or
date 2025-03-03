@@ -1,50 +1,21 @@
-
 package Controllers;
-
-
 
 import Models.Empresa;
 import Services.EmpresaService;
 
-
-
 public class EmpresaController {
-    
-    
-     public EmpresaService empresaService;
+    public EmpresaService EmpresaService;
     
     public EmpresaController(){
-    this.empresaService=new EmpresaService();
-     }
+        this.EmpresaService = new EmpresaService();   
+}
     
-    
-    public void InsetarEmpresa(Empresa empresaNueva){
-    boolean respuesta = empresaService.InsertarEmpresa(empresaNueva);
-    
-    if(respuesta){
-    System.out.println("Ha sido Ingresada una nueva Empresa :)");
-    }else{
-    System.out.println("Lamentablemente algo salio Mal"
-    + "xxxxx-error-xxxxxx"  );
-    
+    public void InsertarEmpresa(Empresa nuevaEmpresa){
+        boolean respuesta =  EmpresaService.InsertarEmpresa(nuevaEmpresa);
+        if(respuesta){
+            System.out.println("Registro guardado con exito");
+        }else{
+            System.out.println("Resgistro no guardado, estas presentando problemas");
+        }
     }
-    
-    
-    }
-
-    public void Imprimir() {
-        empresaService.Imprimir();
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
 }
