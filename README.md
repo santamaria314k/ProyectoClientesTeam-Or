@@ -1,23 +1,20 @@
-trabajo de aplicasion de escritorio en java
-CRUDS::
-
-**clases**
-CLIENTE
-EMPRESA
-CLIENTE POTENCIAL
-ADMINISTRADOR
-**services**
-CLIENTE
-EMPRESA
-CLIENTE POTENCIAL
-ADMINISTRADOR
-**controllers**
-CLIENTE
-EMPRESA
-CLIENTE POTENCIAL
-ADMINISTRADOR
-**DB**
-CLIENTE
-EMPRESA
-CLIENTE POTENCIAL
-ADMINISTRADOR
+-   **Clases (Modelos):**
+    -   `Cliente.java`
+    -   `Empresa.java`
+    -   `ClientePotencial.java`
+    -   `Administrador.java`
+-   **Servicios (Services):**
+    -   `ClienteService.java`
+    -   `EmpresaService.java`
+    -   `ClientePotencialService.java`
+    -   `AdministradorService.java`
+-   **Controladores (Controllers):**
+    -   `ClienteController.java`
+    -   `EmpresaController.java`
+    -   `ClientePotencialController.java`
+    -   `AdministradorController.java`
+-   **Base de Datos (DB):**
+    -   `Cliente` (Tabla)
+    -   `Empresa` (Tabla)
+    -   `ClientePotencial` (Tabla)
+    -   `Administrador` (Tabla)
